@@ -6,7 +6,7 @@ app = Flask(__name__)
 @app.route('/query-example')
 def query_example():
 	language = request.args.get('language') #if key doesn't exist, returns None
-	framework = request.args['framework'] #if key doesn't exist, returns a 400, bad request error
+	framework = request.args.get('framework') #if key doesn't exist, returns a 400, bad request error
 	website = request.args.get('website')
 
 	return render_template('query.html', language=language, \
